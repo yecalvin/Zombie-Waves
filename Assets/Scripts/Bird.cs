@@ -51,9 +51,12 @@ public class Bird : MonoBehaviour {
 	void OnCollisionEnter2D(Collision2D coll){
 		Debug.Log ("collision");
 		if (coll.gameObject != null) {
+			//Debug.Log ();
+			BulletLogic.currentNumberOfBullets--;
 			Destroy (coll.gameObject);
 			CURRENTHP = CURRENTHP - 50;
 			healthBar.fillAmount = CURRENTHP / (float) STARTINGHP;
 		}
 	}
+
 }
