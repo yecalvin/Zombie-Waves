@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Zombie : MonoBehaviour {
 	private float speed = 0.06f;
 	public int STARTINGHP = 100;
 	public int CURRENTHP;
 
+	public Image healthBar;
 
 	// Use this for initialization
 	void Start () {
@@ -33,6 +35,7 @@ public class Zombie : MonoBehaviour {
 		if (coll.gameObject != null) {
 			Destroy (coll.gameObject);
 			CURRENTHP = CURRENTHP - 50;
+			healthBar.fillAmount = CURRENTHP / (float)STARTINGHP;
 		}
 	}
 }
