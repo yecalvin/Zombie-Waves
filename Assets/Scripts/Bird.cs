@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bird : MonoBehaviour {
 	private float speed = 0.06f;
+	private float speedY = 0.01f;
 	public int STARTINGHP = 100;
 	public int CURRENTHP;
 
@@ -23,7 +24,23 @@ public class Bird : MonoBehaviour {
 
 	void moveBird(){
 		Vector2 position = this.transform.position;
-		position.x=position.x - speed;
+		float playerY = GameObject.Find ("CoinSprite").transform.position.y;
+		float playerX = GameObject.Find ("CoinSprite").transform.position.x;
+
+		float currentPositionY = position.y;
+		if (currentPositionY > playerY) {
+			position.y -= speedY;
+		} else {
+			position.y += speedY;
+		}
+
+		float currentPositionX = position.x;
+		if (currentPositionX > playerX) {
+			position.x -= speed;
+		} else {
+			position.x += speed;
+		}
+			
 		this.transform.position = position;
 	}
 
