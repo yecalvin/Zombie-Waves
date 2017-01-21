@@ -10,6 +10,7 @@ public class BulletLogic : MonoBehaviour {
 
 	void Start () {
 		currentNumberOfBullets = 0;
+		Debug.Log (currentNumberOfBullets);
 	}
 	
 	// Update is called once per frame
