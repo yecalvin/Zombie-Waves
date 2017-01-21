@@ -22,12 +22,8 @@ public class BulletScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		rb.velocity = speed;
-
 	}
 
 	void FixedUpdate() {
-		if (rb.position.x > Screen.width) {
-			Destroy (this.gameObject);
-		}
 	}
 }
