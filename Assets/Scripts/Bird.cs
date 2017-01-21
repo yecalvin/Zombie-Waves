@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Bird : MonoBehaviour {
 	private float speed = 0.06f;
-	private float speedY = 0.01f;
+	private float speedY = 0.02f;
 	public int STARTINGHP = 100;
 	public int CURRENTHP;
 
