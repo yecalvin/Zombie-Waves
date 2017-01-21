@@ -18,7 +18,7 @@ public class Zombie : MonoBehaviour {
 	// Update is called once per frame
 	void Update() {
 		moveZombie ();
-		if (CURRENTHP < 0) {
+		if (CURRENTHP <= 0) {
 			Destroy (gameObject);
 		}
 		//checkEdge ();

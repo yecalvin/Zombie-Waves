@@ -460,7 +460,7 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Collab: 1
+    Collab: 0
     UNet: 1
   cloudProjectId: 4fec7f21-3914-4431-8dc3-bbf5d5036173
   projectName: ZombieWaves

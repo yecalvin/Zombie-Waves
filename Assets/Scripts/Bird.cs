@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bird : MonoBehaviour {
 	private float speed = 0.06f;
 	private float speedY = 0.01f;
 	public int STARTINGHP = 100;
 	public int CURRENTHP;
+
+	public Image healthBar;
 
 	// Use this for initialization
 	void Start () {
@@ -16,7 +19,7 @@ public class Bird : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		moveBird();
-		if (CURRENTHP < 0) {
+		if (CURRENTHP <= 0) {
 			Destroy (gameObject);
 		}
 		//checkEdge ();
@@ -49,16 +52,7 @@ public class Bird : MonoBehaviour {
 		if (coll.gameObject != null) {
 			Destroy (coll.gameObject);
 			CURRENTHP = CURRENTHP - 50;
+			healthBar.fillAmount = CURRENTHP / (float) STARTINGHP;
 		}
 	}
-	/*
-	void checkEdge(){
-		Vector2 position = this.transform.position;
-		Debug.Log (position.x);
-		if (position.x < -6f) {
-			Destroy (gameObject);
-		}
-	}
-	
-	*/
 }
