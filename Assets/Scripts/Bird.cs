@@ -13,6 +13,7 @@ public class Bird : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 		CURRENTHP = STARTINGHP;
 	}
 	
