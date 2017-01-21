@@ -35,13 +35,4 @@ public class Zombie : MonoBehaviour {
 			CURRENTHP = CURRENTHP - 50;
 		}
 	}
-
-//	void checkEdge(){
-//		Vector2 position = this.transform.position;
-//		Debug.Log (position.x);
-//		if (position.x < -6f) {
-//			Destroy (gameObject);
-//		}
-//	}
-
 }
