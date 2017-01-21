@@ -59,5 +59,6 @@ public class Bird : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+	
 	*/
 }
