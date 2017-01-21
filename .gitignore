@@ -1,4 +1,2 @@
-Library/
-Assembly-*
-Zombie-Waves.sln
-Temp/
+Temp/*
+Library/*
