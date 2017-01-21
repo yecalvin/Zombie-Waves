@@ -9,6 +9,7 @@ public class Zombie : MonoBehaviour {
 	public int CURRENTHP;
 
 	public Image healthBar;
+	public GameObject bl;
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +35,7 @@ public class Zombie : MonoBehaviour {
 		Debug.Log ("collision");
 		if (coll.gameObject != null) {
 			Destroy (coll.gameObject);
+			BulletLogic.currentNumberOfBullets--;
 			CURRENTHP = CURRENTHP - 50;
 			healthBar.fillAmount = CURRENTHP / (float)STARTINGHP;
 		}

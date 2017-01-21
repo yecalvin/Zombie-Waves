@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\BulletLogic.cs" />
      <Compile Include="Assets\Scripts\Bird.cs" />
      <Compile Include="Assets\Scripts\BulletDestroy.cs" />
      <Compile Include="Assets\Scripts\BulletScript.cs" />
