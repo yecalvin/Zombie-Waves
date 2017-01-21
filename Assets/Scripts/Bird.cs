@@ -20,6 +20,7 @@ public class Bird : MonoBehaviour {
 	void Update () {
 		moveBird();
 		if (CURRENTHP <= 0) {
+			Score.score += 1;
 			Destroy (gameObject);
 		}
 		//checkEdge ();

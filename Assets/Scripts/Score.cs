@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Score : MonoBehaviour {
 
-	//public Text scoreText;
-	public int score;
+	public Text scoreText;
+	public static int score;
 
 	// Use this for initialization
 	void Start () {
@@ -16,6 +16,10 @@ public class Score : MonoBehaviour {
 	
 	// Update is called once per frame
 	void updateScore () {
-		//scoreText = "Score: " + score;
+		scoreText.text = "Score: " + score;
+	}
+
+	void FixedUpdate() {
+		scoreText.text = "Score: " + score;
 	}
 }

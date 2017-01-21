@@ -19,10 +19,13 @@ public class Zombie : MonoBehaviour {
 	void Update() {
 		moveZombie ();
 		if (CURRENTHP <= 0) {
+			Score.score += 1;
 			Destroy (gameObject);
 		}
 		//checkEdge ();
 	}
+
+
 
 	void moveZombie(){
 		Vector2 position = this.transform.position;
