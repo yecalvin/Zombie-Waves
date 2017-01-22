@@ -36,7 +36,6 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//TODO: Check if game should end?
-
 		continueGame = shouldContinueGame ();
 		if (!continueGame) {
 			endGame ();
@@ -45,12 +44,11 @@ public class GameController : MonoBehaviour {
 
 	bool shouldContinueGame () {
 
-		//return (playerHealth > 0) && (playerWidth > goalWidth);
-		return Player.playerHealth > 0;
+		return Player.playerHealth > 0 && Player.distance < 10.0f;
 	}
 
 	void endGame () {
-
+		
 		Debug.Log (" End game ");
 
 
