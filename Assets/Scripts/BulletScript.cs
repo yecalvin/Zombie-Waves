@@ -12,20 +12,23 @@ public class BulletScript : MonoBehaviour {
 	void Start () {
 		Vector3 mousePos = cam.ScreenToWorldPoint (Input.mousePosition);
 		Vector3 currentPos = transform.position;
-		speed.x = 3;
-		speed.y = mousePos.y-currentPos.y;
-		speed.z = 5;
+		speed = mousePos - currentPos;
+		if (speed.x >= 0.0f) {
+			speed.x = 3.0f;
+		} else if (speed.x < 0.0f) {
+			speed.x = -3.0f;
+		} else {
+			speed.x = 0.0f;
+		}
 		rb = GetComponent<Rigidbody2D> ();
-		//speed.y = speed.y + 1;
 		rb.velocity = speed;
+
 
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		rb.velocity = speed;
-	}
 
 	void FixedUpdate() {
+		rb.velocity = speed;
 	}
 }

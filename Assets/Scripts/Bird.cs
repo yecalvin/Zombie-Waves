@@ -20,6 +20,7 @@ public class Bird : MonoBehaviour {
 	void Update () {
 		moveBird();
 		if (CURRENTHP <= 0) {
+			Score.score += 1;
 			Destroy (gameObject);
 		}
 		//checkEdge ();
@@ -51,6 +52,7 @@ public class Bird : MonoBehaviour {
 		Debug.Log ("collision");
 		if (coll.gameObject != null) {
 			Destroy (coll.gameObject);
+			BulletLogic.currentNumberOfBullets--;
 			CURRENTHP = CURRENTHP - 50;
 			healthBar.fillAmount = CURRENTHP / (float) STARTINGHP;
 		}

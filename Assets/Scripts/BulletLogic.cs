@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BulletLogic : MonoBehaviour {
 	public GameObject bullet;
 	public static int currentNumberOfBullets;
-	private int maxBullets = 6;
+	private int maxBullets = 4;
 	public Image aggroBar;
 
 
