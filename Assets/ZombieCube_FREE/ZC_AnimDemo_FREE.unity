@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -166,6 +166,7 @@ GameObject:
   - component: {fileID: 267865305}
   - component: {fileID: 267865308}
   - component: {fileID: 267865309}
+  - component: {fileID: 267865310}
   m_Layer: 0
   m_Name: CoinSprite
   m_TagString: Untagged
@@ -186,6 +187,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   bullet: {fileID: 1937468075819168, guid: bd41bdf5deb934c459ae0d871a868144, type: 2}
+  currentNumberOfBullets: 0
 --- !u!212 &267865306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -260,6 +262,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 302016343}
+--- !u!114 &267865310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 267865304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403db0a792cf642808584e94227e0d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1937468075819168, guid: bd41bdf5deb934c459ae0d871a868144, type: 2}
 --- !u!1 &302016341
 GameObject:
   m_ObjectHideFlags: 0

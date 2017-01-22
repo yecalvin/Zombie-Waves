@@ -22,7 +22,11 @@ GameObject:
   - component: {fileID: 212093997452487020}
   - component: {fileID: 114795621251569678}
   - component: {fileID: 58264124451085862}
+<<<<<<< Updated upstream
   - component: {fileID: 114113760628542210}
+=======
+  - component: {fileID: 114121725345720684}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: CoinSprite
   m_TagString: Untagged
@@ -57,7 +61,11 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.34
+<<<<<<< Updated upstream
 --- !u!114 &114113760628542210
+=======
+--- !u!114 &114121725345720684
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
