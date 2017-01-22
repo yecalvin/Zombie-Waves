@@ -8,12 +8,19 @@ public class Bird : MonoBehaviour {
 	private float speedY = 0.02f;
 	public int STARTINGHP = 100;
 	public int CURRENTHP;
-
+	private float maxWidth;
+	private float maxHeight;
 	public Image healthBar;
+
+	private int a = 0;
+	public Camera cam;
 
 	// Use this for initialization
 	void Start () {
 		CURRENTHP = STARTINGHP;
+		if (cam == null) {
+			cam = Camera.main;
+		}
 	}
 	
 	// Update is called once per frame
@@ -26,25 +33,99 @@ public class Bird : MonoBehaviour {
 		//checkEdge ();
 	}
 
+//	void moveBird(){
+//		Vector2 position = this.transform.position;
+//		float playerY = GameObject.Find ("CoinSprite").transform.position.y;
+//		float playerX = GameObject.Find ("CoinSprite").transform.position.x;
+//
+//		float currentPositionY = position.y;
+//		if (currentPositionY > playerY) {
+//			position.y -= speedY;
+//		} else {
+//			position.y += speedY;
+//		}
+//
+//		float currentPositionX = position.x;
+//		if (currentPositionX > playerX) {
+//			position.x -= speed;
+//		} else {
+//			position.x += speed;
+//		}
+//			
+//		this.transform.position = position;
+//	}
+
+
 	void moveBird(){
 		Vector2 position = this.transform.position;
 		float playerY = GameObject.Find ("CoinSprite").transform.position.y;
 		float playerX = GameObject.Find ("CoinSprite").transform.position.x;
 
+		Vector3 upperCorner = new Vector3 (Screen.width, Screen.height, 0.0f);
+		Vector3 targetWidth = cam.ScreenToWorldPoint (upperCorner);
+		float playerWidth = GetComponent<Renderer> ().bounds.extents.x;
+		maxHeight = targetWidth.y;
+		maxWidth = targetWidth.x - playerWidth/2;
 		float currentPositionY = position.y;
-		if (currentPositionY > playerY) {
-			position.y -= speedY;
+		float currentPositionX = position.x;
+
+
+
+		if (a > 0) {
+			if (currentPositionY > playerY) {
+				position.y += speedY;
+			} else {
+				position.y -= speedY;
+			}
+
+
+			if (currentPositionX > playerX) {
+				position.x += speed;
+			} else {
+				position.x -= speed;
+			}
+			a--;
 		} else {
-			position.y += speedY;
+
+			if (( playerY - 0.2f < currentPositionY && currentPositionY  < playerY + 0.2f) &&
+				( playerX - 0.2f < currentPositionX && currentPositionX < playerX + 0.2f)) {
+				if (currentPositionY > playerY) {
+					position.y += speedY;
+				} else {
+					position.y -= speedY;
+				}
+
+
+				if (currentPositionX > playerX) {
+					position.x += speed;
+				} else {
+					position.x -= speed;
+				}
+
+				a = 100;
+
+
+			} else {
+
+				if (currentPositionY > playerY) {
+					position.y -= speedY;
+				} else {
+					position.y += speedY;
+				}
+
+
+				if (currentPositionX > playerX) {
+					position.x -= speed;
+				} else {
+					position.x += speed;
+				}
+
+
+			}
+
 		}
 
-		float currentPositionX = position.x;
-		if (currentPositionX > playerX) {
-			position.x -= speed;
-		} else {
-			position.x += speed;
-		}
-			
+
 		this.transform.position = position;
 	}
 
@@ -58,3 +139,4 @@ public class Bird : MonoBehaviour {
 		}
 	}
 }
+
