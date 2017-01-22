@@ -9,6 +9,7 @@ public class GameController : MonoBehaviour {
 	//GameState
 	public bool continueGame = true;
 	public static bool gameStarted = false;
+	public static bool gameOver = false;
 
 	//Game configuration
 	public float zombieSpawnRate = 3.5f;
@@ -29,6 +30,7 @@ public class GameController : MonoBehaviour {
 		StartCoroutine (SpawnZombie());
 		Player.playerHealth = 3;
 		gameStarted = true;
+		gameOver = false;
 		endButton.SetActive (false);
 	}
 
@@ -49,7 +51,7 @@ public class GameController : MonoBehaviour {
 	void Update () {
 		//TODO: Check if game should end?
 		continueGame = playerIsAlive ();
-		if (!continueGame) {
+		if (!continueGame && !gameOver) {
 			endGame ();
 		}
 	}
@@ -68,8 +70,8 @@ public class GameController : MonoBehaviour {
 		
 
 	void endGame () {
-		Debug.Log (" End game ");
-
+		//Debug.Log (" End game ");
+		gameOver = true;
 		endButton.SetActive (true);
 	}
 		

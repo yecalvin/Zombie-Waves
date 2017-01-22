@@ -15,14 +15,12 @@ public class Player : MonoBehaviour {
 
 	public static int playerHealth = 3;
 	public GameObject life;
-	//public List<Transform> lifeList;
 	public Transform[] lifeArray;
 
 	Vector3 pos;
 	private Vector3 normalizedDirection;
 	private float xDiff;
 	private float yDiff;
-	//private int maxBullets = 6;
 	public int currentNumberOfBullets;
 
 	// Use this for initialization
@@ -40,13 +38,10 @@ public class Player : MonoBehaviour {
 		pos = Input.mousePosition;
 		pos.z = 20;
 
-		//lifeList = new List<Transform> ();
 		lifeArray = new Transform[3];
 		for (int i = 0; i < 3; i++) {
-		
 			lifeArray [i] = life.transform.GetChild (i);
 		}
-
 
 	}
 
@@ -97,7 +92,7 @@ public class Player : MonoBehaviour {
 
 	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "Zombie") {
-			Debug.Log (" Player Collide ");
+			//Debug.Log (" Player Collide ");
 			Destroy (col.gameObject);
 			playerHealth--;
 			if (playerHealth >= 0) {

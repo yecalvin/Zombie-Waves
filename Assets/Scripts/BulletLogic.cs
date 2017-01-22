@@ -42,7 +42,7 @@ public class BulletLogic : MonoBehaviour {
 	}
 
 	void Fire() {
-		Debug.Log (currentNumberOfBullets);
+		//Debug.Log (currentNumberOfBullets);
 		Vector3 spawnPosition = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
 		Quaternion spawnRotation = Quaternion.identity;
 		currentNumberOfBullets++;
