@@ -97,8 +97,14 @@ public class GameController : MonoBehaviour {
 			);
 
 			Quaternion spawnRot = Quaternion.identity;
-			Instantiate (zombie, spawnPos, spawnRot); 
-			Instantiate (bird, spawnPosF, spawnRot);
+
+			int r = Random.Range (0, 99);
+
+			if (r < 50) {
+				Instantiate (zombie, spawnPos, spawnRot); 
+			} else {
+				Instantiate (bird, spawnPosF, spawnRot);
+			}
 
 			//Yield is just to stop unity from freezing
 			yield return new WaitForSeconds (Random.Range (1.0f, 2.0f));
