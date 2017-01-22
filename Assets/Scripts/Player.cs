@@ -35,21 +35,6 @@ public class Player : MonoBehaviour {
 		return currentNumberOfBullets;
 	}
 
-	/*
-	void Update() {
-		if (Input.GetKeyDown(KeyCode.Space) && currentNumberOfBullets < maxBullets) {
-			Fire ();
-		}
-	}
-
-	void Fire() {
-		Vector3 spawnPosition = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
-		Quaternion spawnRotation = Quaternion.identity;
-		currentNumberOfBullets++;
-		Instantiate (bullet, spawnPosition, spawnRotation);
-	}
-	*/
-
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (Input.GetKey ("d")) {

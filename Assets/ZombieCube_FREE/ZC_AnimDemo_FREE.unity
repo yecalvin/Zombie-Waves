@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -167,7 +167,10 @@ GameObject:
   - component: {fileID: 267865308}
   - component: {fileID: 267865309}
   - component: {fileID: 267865310}
+<<<<<<< HEAD
   - component: {fileID: 267865311}
+=======
+>>>>>>> f0a39328aa841e457807bc7a31e1e4936ecdcdc4
   m_Layer: 0
   m_Name: CoinSprite
   m_TagString: Untagged
@@ -275,6 +278,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1937468075819168, guid: bd41bdf5deb934c459ae0d871a868144, type: 2}
+<<<<<<< HEAD
   aggroBar: {fileID: 588399657}
 --- !u!114 &267865311
 MonoBehaviour:
@@ -287,6 +291,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7aa272dea6bd45649f55fee93cf96b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+>>>>>>> f0a39328aa841e457807bc7a31e1e4936ecdcdc4
 --- !u!1 &302016341
 GameObject:
   m_ObjectHideFlags: 0
