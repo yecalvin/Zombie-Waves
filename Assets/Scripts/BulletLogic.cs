@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class BulletLogic : MonoBehaviour {
 	public GameObject bullet;
 	public static int currentNumberOfBullets;
-	private int maxBullets = 4;
+	private int maxBullets = 5;
 	public Image aggroBar;
 
 
@@ -28,7 +28,7 @@ public class BulletLogic : MonoBehaviour {
 		}
 		if (Input.GetKeyDown (KeyCode.Space) && currentNumberOfBullets <= maxBullets && !fullAggro) {
 			Fire ();
-			aggroBar.fillAmount += 0.5f;
+			aggroBar.fillAmount += 0.3f;
 		}
 
 		if (aggroBar.fillAmount >= 1.0f) {
