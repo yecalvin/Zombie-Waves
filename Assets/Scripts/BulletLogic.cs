@@ -11,12 +11,13 @@ public class BulletLogic : MonoBehaviour {
 
 
 	// Use this for initialization
+	private bool fullAggro;
 
 	void Start () {
 		currentNumberOfBullets = 0;
 		Debug.Log (currentNumberOfBullets);
 		aggroBar.fillAmount = 0;
-		//bullet.gameObject.tag = "bullet";
+		fullAggro = false;
 
 	}
 	
@@ -25,14 +26,19 @@ public class BulletLogic : MonoBehaviour {
 		if (aggroBar.fillAmount > 0) {
 			aggroBar.fillAmount -= 0.005f;
 		}
-		if (Input.GetKeyDown(KeyCode.Space) && currentNumberOfBullets <= maxBullets)   {
+		if (Input.GetKeyDown (KeyCode.Space) && currentNumberOfBullets <= maxBullets && !fullAggro) {
 			Fire ();
-			aggroBar.fillAmount += 0.1f;
-
-			if (aggroBar.fillAmount == 1.0f) {
-				Debug.Log ("Enter top-down view");
-			}
+			aggroBar.fillAmount += 0.5f;
 		}
+
+		if (aggroBar.fillAmount >= 1.0f) {
+			fullAggro = true;
+		}
+
+		if (aggroBar.fillAmount <= 0) {
+			fullAggro = false;
+		}
+
 	}
 
 	void Fire() {
