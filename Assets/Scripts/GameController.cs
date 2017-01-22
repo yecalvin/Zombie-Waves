@@ -15,28 +15,34 @@ public class GameController : MonoBehaviour {
 	public GameObject player;
 	public GameObject zombie;
 	public GameObject bird;
+	public GameObject startButton;
+	public GameObject endButton;
 
 	private float maxWidth;
 
+
+	public void StartGame() {
+		//Debug.Log ("Button Event Handler");
+		startButton.SetActive (false);
+		//Starts zombie waves
+		StartCoroutine (SpawnZombie());
+		Player.playerHealth = 3;
+		endButton.SetActive (false);
+	}
 
 	// Use this for initialization
 	void Start () {
 		if (cam == null) {
 			cam = Camera.main;
 		}
-
 		Vector3 upperCorner = new Vector3 (Screen.width, Screen.height, 0.0f);
 		Vector3 targetWidth = cam.ScreenToWorldPoint (upperCorner);
-
-		//Starts zombie waves
-		StartCoroutine (SpawnZombie());
-
+		endButton.SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		//TODO: Check if game should end?
-
 		continueGame = shouldContinueGame ();
 		if (!continueGame) {
 			endGame ();
@@ -44,16 +50,14 @@ public class GameController : MonoBehaviour {
 	}
 
 	bool shouldContinueGame () {
-
 		//return (playerHealth > 0) && (playerWidth > goalWidth);
 		return Player.playerHealth > 0;
 	}
 
 	void endGame () {
-
 		Debug.Log (" End game ");
-
-
+		Score.score = 0;
+		endButton.SetActive (true);
 	}
 
 	IEnumerator SpawnZombie() {

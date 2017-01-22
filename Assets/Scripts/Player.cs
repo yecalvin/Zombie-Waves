@@ -14,7 +14,7 @@ public class Player : MonoBehaviour {
 	private Vector3 normalizedDirection;
 	private float xDiff;
 	private float yDiff;
-	private int maxBullets = 6;
+	//private int maxBullets = 6;
 	public int currentNumberOfBullets;
 
 	// Use this for initialization
@@ -59,11 +59,14 @@ public class Player : MonoBehaviour {
 
 		if (col.gameObject.tag == "Zombie") {
 			Debug.Log (" Player Collide ");
-
+			Destroy (col.gameObject);
+			playerHealth--;
+			/*
 			if (playerHealth > 0) {
 				Destroy (col.gameObject);
 				playerHealth--;
 			}
+			*/
 		}
 	}
 
