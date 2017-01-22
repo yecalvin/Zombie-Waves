@@ -6,11 +6,11 @@ public class BulletLogic : MonoBehaviour {
 	public GameObject bullet;
 	public static int currentNumberOfBullets;
 	private int maxBullets = 6;
+
 	// Use this for initialization
 
 	void Start () {
 		currentNumberOfBullets = 0;
-		Debug.Log (currentNumberOfBullets);
 	}
 	
 	// Update is called once per frame

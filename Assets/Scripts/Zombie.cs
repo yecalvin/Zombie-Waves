@@ -26,8 +26,6 @@ public class Zombie : MonoBehaviour {
 		//checkEdge ();
 	}
 
-
-
 	void moveZombie(){
 		Vector2 position = this.transform.position;
 		position.x=position.x - speed;
