@@ -48,8 +48,9 @@ public class Player : MonoBehaviour {
 	void FixedUpdate () {
 		moving = false;
 		if (Input.GetKey ("d")) {
+
 			Vector3 newPosition = new Vector3 (transform.position.x + 0.1f, transform.position.y, transform.position.z);
-			if (newPosition.x < -1.5) {
+			if (newPosition.x < -2) {
 				transform.position = newPosition;
 				moving = false;
 			} else {
@@ -58,21 +59,23 @@ public class Player : MonoBehaviour {
 				Move (sky2);
 				Move2 (ground);
 				Move2 (ground2);
-				distance += 0.1f;
+
+				distance += 0.01f;
 			}
 				
 		} else if (Input.GetKey ("a")) {
 			Vector3 newPosition = new Vector3 (transform.position.x - 0.1f, transform.position.y, transform.position.z);
-			if (newPosition.x > -maxWidth) {
+			if (newPosition.x > (-6 + GetComponent<Renderer> ().bounds.extents.x/2)) {
 				transform.position = newPosition;
 			}
 		} 
 	}
 
 	void Move(GameObject gameObj) {
-		gameObj.transform.position = new Vector3 (gameObj.transform.position.x-0.03f, gameObj.transform.position.y, gameObj.transform.position.z);
-		if (gameObj.transform.position.x < -11.96f) {
-			gameObj.transform.position = new Vector3 (11.96f, gameObj.transform.position.y, gameObj.transform.position.z);
+
+		gameObj.transform.position = new Vector3 (gameObj.transform.position.x-0.02f, gameObj.transform.position.y, gameObj.transform.position.z);
+		if (gameObj.transform.position.x < -13.7f) {
+			gameObj.transform.position = new Vector3 (13.7f, gameObj.transform.position.y, gameObj.transform.position.z);
 		} 
 	}
 
