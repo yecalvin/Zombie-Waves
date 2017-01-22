@@ -63,6 +63,8 @@ public class GameController : MonoBehaviour {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		//Application.LoadLevel(Application.loadedLevel);
 		//startButton.
+		Application.LoadLevel (0); 
+		StartGame();
 	}
 
 
