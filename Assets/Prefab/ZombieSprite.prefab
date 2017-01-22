@@ -127,6 +127,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   STARTINGHP: 100
   CURRENTHP: 0
+  fastZombieSpawnRate: 0.3
   healthBar: {fileID: 114530303436335320}
   bl: {fileID: 0}
 --- !u!114 &114020935506227920

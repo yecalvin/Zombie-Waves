@@ -8,12 +8,21 @@ public class Zombie : MonoBehaviour {
 	public int STARTINGHP = 100;
 	public int CURRENTHP;
 
+	public float fastZombieSpawnRate = 0.3f;
+
 	public Image healthBar;
 	public GameObject bl;
 
 	// Use this for initialization
 	void Start () {
 		CURRENTHP = STARTINGHP;
+
+		float prob = Random.Range (0.0f, 1.0f);
+		if (prob > fastZombieSpawnRate) {
+			speed = 0.06f;
+		} else {
+			speed = 0.03f;
+		}
 	}
 		
 	// Update is called once per frame
@@ -23,7 +32,6 @@ public class Zombie : MonoBehaviour {
 			Score.score += 1;
 			Destroy (gameObject);
 		}
-		//checkEdge ();
 	}
 
 	void moveZombie(){
@@ -38,11 +46,6 @@ public class Zombie : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
-		//Debug.Log ("collision");
-
-		if (coll.gameObject.CompareTag("bullet")) {
-			Debug.Log ("bulletColl");
-		}
 		if (coll.gameObject != null) {
 			Destroy (coll.gameObject);
 			BulletLogic.currentNumberOfBullets--;
