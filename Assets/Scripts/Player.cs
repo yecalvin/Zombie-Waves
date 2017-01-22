@@ -14,6 +14,9 @@ public class Player : MonoBehaviour {
 	public static float distance;
 
 	public static int playerHealth = 3;
+	public GameObject life;
+	//public List<Transform> lifeList;
+	public Transform[] lifeArray;
 
 	private float maxWidth;
 	Vector3 pos;
@@ -38,6 +41,15 @@ public class Player : MonoBehaviour {
 
 		pos = Input.mousePosition;
 		pos.z = 20;
+
+		//lifeList = new List<Transform> ();
+		lifeArray = new Transform[3];
+		for (int i = 0; i < 3; i++) {
+		
+			lifeArray [i] = life.transform.GetChild (i);
+		}
+
+
 	}
 
 	public int getCurrentNumberOfBullets() {
@@ -97,6 +109,15 @@ public class Player : MonoBehaviour {
 				playerHealth--;
 			}
 			*/
+			if (playerHealth >= 0) {
+				lifeArray [playerHealth].gameObject.SetActive (false);
+			}
+
+//			Transform[] c = GetComponentsInChildren<Transform> ();
+//
+//			c[playerHealth-1].
+
+			//life
 		}
 	}
 

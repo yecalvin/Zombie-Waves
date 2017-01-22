@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
@@ -37,7 +38,10 @@ public class GameController : MonoBehaviour {
 		}
 		Vector3 upperCorner = new Vector3 (Screen.width, Screen.height, 0.0f);
 		Vector3 targetWidth = cam.ScreenToWorldPoint (upperCorner);
-		endButton.SetActive (false);
+
+		if (startButton.activeSelf == false) {
+			startButton.SetActive (true);
+		}
 	}
 	
 	// Update is called once per frame
@@ -54,6 +58,13 @@ public class GameController : MonoBehaviour {
 		return Player.playerHealth > 0 && Player.distance < 10.0f;
 
 	}
+
+	public void restartGame() {
+		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+		//Application.LoadLevel(Application.loadedLevel);
+		//startButton.
+	}
+
 
 	void endGame () {
 		
