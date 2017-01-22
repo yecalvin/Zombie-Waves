@@ -28,6 +28,10 @@ public class BulletLogic : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space) && currentNumberOfBullets <= maxBullets)   {
 			Fire ();
 			aggroBar.fillAmount += 0.1f;
+
+			if (aggroBar.fillAmount == 1.0f) {
+				Debug.Log ("Enter top-down view");
+			}
 		}
 	}
 
