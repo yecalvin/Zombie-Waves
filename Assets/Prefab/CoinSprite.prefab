@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212093997452487020}
   - component: {fileID: 114795621251569678}
   - component: {fileID: 58264124451085862}
+  - component: {fileID: 114113760628542210}
   m_Layer: 0
   m_Name: CoinSprite
   m_TagString: Untagged
@@ -56,6 +57,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.34
+--- !u!114 &114113760628542210
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1428313245813964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 403db0a792cf642808584e94227e0d4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bullet: {fileID: 1937468075819168, guid: bd41bdf5deb934c459ae0d871a868144, type: 2}
 --- !u!114 &114795621251569678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -69,6 +82,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   bullet: {fileID: 1937468075819168, guid: bd41bdf5deb934c459ae0d871a868144, type: 2}
+  currentNumberOfBullets: 0
 --- !u!212 &212093997452487020
 SpriteRenderer:
   m_ObjectHideFlags: 1
