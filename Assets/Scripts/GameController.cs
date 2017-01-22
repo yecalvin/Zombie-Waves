@@ -57,7 +57,6 @@ public class GameController : MonoBehaviour {
 	bool playerIsAlive () {
 		//return (playerHealth > 0) && (playerWidth > goalWidth);
 		return Player.playerHealth > 0; //&& Player.distance < 10.0f;
-
 	}
 
 	public void restartGame() {
@@ -66,7 +65,7 @@ public class GameController : MonoBehaviour {
 		Application.LoadLevel (0); 
 		StartGame();
 	}
-
+		
 
 	void endGame () {
 		Debug.Log (" End game ");

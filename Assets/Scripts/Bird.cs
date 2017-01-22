@@ -17,7 +17,9 @@ public class Bird : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		CURRENTHP = STARTINGHP;
+		int scale = Score.score/(int) 2.5;
+		int appliedScale = Mathf.Max (1, scale);
+		CURRENTHP = STARTINGHP+(appliedScale * 10);
 		if (cam == null) {
 			cam = Camera.main;
 		}
