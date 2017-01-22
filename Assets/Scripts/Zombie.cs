@@ -17,7 +17,7 @@ public class Zombie : MonoBehaviour {
 	void Start () {
 		CURRENTHP = STARTINGHP;
 		float prob = Random.Range (0.0f, 1.0f);
-		speed = prob > fastZombieSpawnRate ? Random.Range (0.035f, 0.07f) : speed;
+		speed = prob > fastZombieSpawnRate ? Random.Range (0.05f, 0.07f) : speed;
 	}
 		
 	// Update is called once per frame
