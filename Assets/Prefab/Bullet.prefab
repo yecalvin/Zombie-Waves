@@ -25,11 +25,7 @@ GameObject:
   - component: {fileID: 114451823797533036}
   m_Layer: 0
   m_Name: Bullet
-<<<<<<< HEAD
-  m_TagString: bullet
-=======
   m_TagString: Bullet
->>>>>>> f0a39328aa841e457807bc7a31e1e4936ecdcdc4
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
