@@ -57,6 +57,8 @@ public class Player : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () {
 		moving = false;
+		if (!GameController.gameStarted)
+			return;
 		if (Input.GetKey ("d")) {
 
 			Vector3 newPosition = new Vector3 (transform.position.x + 0.1f, transform.position.y, transform.position.z);

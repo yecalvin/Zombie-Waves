@@ -26,6 +26,7 @@ public class BulletScript : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate() {
 		//rb.velocity = speed;
+		rb.velocity = speed;
 	}
 
 	void Update() {

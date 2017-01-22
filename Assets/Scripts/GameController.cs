@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour {
 
 	//GameState
 	public bool continueGame = true;
+	public static bool gameStarted = false;
 
 	//Game configuration
 	public float zombieSpawnRate = 3.5f;
@@ -27,6 +28,7 @@ public class GameController : MonoBehaviour {
 		//Starts zombie waves
 		StartCoroutine (SpawnZombie());
 		Player.playerHealth = 3;
+		gameStarted = true;
 		endButton.SetActive (false);
 	}
 
@@ -72,6 +74,7 @@ public class GameController : MonoBehaviour {
 
 		endButton.SetActive (true);
 	}
+		
 
 	IEnumerator SpawnZombie() {
 
@@ -81,10 +84,11 @@ public class GameController : MonoBehaviour {
 		while (continueGame) {
 			//Debug.Log ("Spawning Zombie ");
 			float spawningPointX = transform.position.x;
-	
+
+			//Camera.main.transform.positi
+
 			Vector3 spawnPos = new Vector3 (
 				Random.Range (spawningPointX - 2, spawningPointX + 2),
-				//Random.Range(-2.08f, 2.49f),
 				transform.position.y,
 				0.0f
 			);
@@ -92,7 +96,6 @@ public class GameController : MonoBehaviour {
 			Vector3 spawnPosF = new Vector3 (
 				Random.Range (spawningPointX - 2, spawningPointX + 2),
 				Random.Range(-0.8f, 2.49f),
-				//transform.position.y,
 				0.0f
 			);
 
@@ -101,7 +104,7 @@ public class GameController : MonoBehaviour {
 			Instantiate (bird, spawnPosF, spawnRot);
 
 			//Yield is just to stop unity from freezing
-			yield return new WaitForSeconds (Random.Range (1.0f, 2.0f));
+			yield return new WaitForSeconds (Random.Range (2.0f, 5.0f));
 		}
 	}
 }

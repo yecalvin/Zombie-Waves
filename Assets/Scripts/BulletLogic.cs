@@ -20,13 +20,13 @@ public class BulletLogic : MonoBehaviour {
 		fullAggro = false;
 
 	}
-	
+
 	// Update is called once per frame
 	void Update() {
 		if (aggroBar.fillAmount > 0) {
 			aggroBar.fillAmount -= 0.005f;
 		}
-		if (Input.GetKeyDown (KeyCode.Space) && currentNumberOfBullets <= maxBullets && !fullAggro) {
+		if (Input.GetKeyDown (KeyCode.Space) && currentNumberOfBullets <= maxBullets && !fullAggro && GameController.gameStarted) {
 			Fire ();
 			aggroBar.fillAmount += 0.5f;
 		}
