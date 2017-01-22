@@ -11,9 +11,8 @@ Global Game Jam Repo
 
 - Better sprites
 - Audio
-- Zombie jump
 - Bird spawning point increase
-- Zombie speed
+- Zombie speed, Zombie jump 
 - Animation
 
 
