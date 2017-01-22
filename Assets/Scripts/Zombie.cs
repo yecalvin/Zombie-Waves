@@ -8,7 +8,7 @@ public class Zombie : MonoBehaviour {
 	public int STARTINGHP = 100;
 	public int CURRENTHP;
 
-	public float fastZombieSpawnRate = 0.3f;
+	public float fastZombieSpawnRate = 0.1f;
 
 	public Image healthBar;
 	public GameObject bl;
@@ -16,13 +16,8 @@ public class Zombie : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		CURRENTHP = STARTINGHP;
-
 		float prob = Random.Range (0.0f, 1.0f);
-		if (prob > fastZombieSpawnRate) {
-			speed = 0.06f;
-		} else {
-			speed = 0.03f;
-		}
+		speed = prob > fastZombieSpawnRate ? Random.Range (0.035f, 0.07f) : speed;
 	}
 		
 	// Update is called once per frame
@@ -38,10 +33,8 @@ public class Zombie : MonoBehaviour {
 		Vector2 position = this.transform.position;
 		if (Player.moving) {
 			position.x = position.x - 0.09f;
-		} else {
-			position.x=position.x - speed;
-		}
-		position.x=position.x - speed;
+		} 
+		position.x = position.x - speed;
 		transform.position = position;
 	}
 
@@ -51,7 +44,7 @@ public class Zombie : MonoBehaviour {
 			BulletLogic.currentNumberOfBullets--;
 
 			CURRENTHP = CURRENTHP - 50;
-			healthBar.fillAmount = CURRENTHP / (float)STARTINGHP;
+			healthBar.fillAmount = CURRENTHP / (float) STARTINGHP;
 		}
 	}
 }
