@@ -71,7 +71,7 @@ public class GameController : MonoBehaviour {
 	void endGame () {
 		
 		Debug.Log (" End game ");
-		Score.score = 0;
+
 		endButton.SetActive (true);
 	}
 
