@@ -26,7 +26,7 @@ public class BulletLogic : MonoBehaviour {
 		if (aggroBar.fillAmount > 0) {
 			aggroBar.fillAmount -= 0.005f;
 		}
-		if (Input.GetKeyDown (KeyCode.Space) && currentNumberOfBullets <= maxBullets && !fullAggro) {
+		if ((Input.GetKeyDown(KeyCode.Mouse0) ||Input.GetKeyDown(KeyCode.Space)) && currentNumberOfBullets <= maxBullets && !fullAggro) {
 			Fire ();
 			aggroBar.fillAmount += 0.3f;
 		}
