@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour {
 	private Vector3 normalizedDirection;
 	private float xDiff;
 	private float yDiff;
-	//private int maxBullets = 6;
+	private int maxBullets = 6;
 	public int currentNumberOfBullets;
 
 	// Use this for initialization
@@ -38,6 +38,11 @@ public class Player : MonoBehaviour {
 
 		pos = Input.mousePosition;
 		pos.z = 20;
+
+
+		//Draw life
+
+
 	}
 
 	public int getCurrentNumberOfBullets() {
@@ -69,6 +74,8 @@ public class Player : MonoBehaviour {
 		} 
 	}
 
+
+
 	void Move(GameObject gameObj) {
 		gameObj.transform.position = new Vector3 (gameObj.transform.position.x-0.03f, gameObj.transform.position.y, gameObj.transform.position.z);
 		if (gameObj.transform.position.x < -11.96f) {
@@ -82,18 +89,15 @@ public class Player : MonoBehaviour {
 			gameObj.transform.position = new Vector3 (12.8f, gameObj.transform.position.y, gameObj.transform.position.z);
 		} 
 	}
+
 	void OnTriggerEnter2D (Collider2D col) {
 
 		if (col.gameObject.tag == "Zombie") {
 			Debug.Log (" Player Collide ");
-			Destroy (col.gameObject);
-			playerHealth--;
-			/*
 			if (playerHealth > 0) {
 				Destroy (col.gameObject);
 				playerHealth--;
 			}
-			*/
 		}
 	}
 

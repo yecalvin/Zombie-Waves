@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Zombie : MonoBehaviour {
-	private float speed = 0.06f;
+	private float speed = 0.03f;
 	public int STARTINGHP = 100;
 	public int CURRENTHP;
 
@@ -28,8 +28,13 @@ public class Zombie : MonoBehaviour {
 
 	void moveZombie(){
 		Vector2 position = this.transform.position;
+		if (Player.moving) {
+			position.x = position.x - 0.09f;
+		} else {
+			position.x=position.x - speed;
+		}
 		position.x=position.x - speed;
-		this.transform.position = position;
+		transform.position = position;
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
