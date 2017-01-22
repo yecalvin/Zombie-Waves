@@ -9,7 +9,6 @@ public class GameController : MonoBehaviour {
 	//GameState
 	public bool continueGame = true;
 
-
 	//Game configuration
 	public float zombieSpawnRate = 3.5f;
 	public Camera cam;
@@ -69,7 +68,6 @@ public class GameController : MonoBehaviour {
 
 
 	void endGame () {
-		
 		Debug.Log (" End game ");
 
 		endButton.SetActive (true);

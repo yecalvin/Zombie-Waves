@@ -18,7 +18,6 @@ public class Player : MonoBehaviour {
 	//public List<Transform> lifeList;
 	public Transform[] lifeArray;
 
-	private float maxWidth;
 	Vector3 pos;
 	private Vector3 normalizedDirection;
 	private float xDiff;
@@ -37,7 +36,6 @@ public class Player : MonoBehaviour {
 		Vector3 upperCorner = new Vector3 (Screen.width, Screen.height, 0.0f);
 		Vector3 targetWidth = cam.ScreenToWorldPoint (upperCorner);
 		float playerWidth = GetComponent<Renderer> ().bounds.extents.x;
-		maxWidth = targetWidth.x - playerWidth/2;
 
 		pos = Input.mousePosition;
 		pos.z = 20;
@@ -84,7 +82,6 @@ public class Player : MonoBehaviour {
 	}
 
 	void Move(GameObject gameObj) {
-
 		gameObj.transform.position = new Vector3 (gameObj.transform.position.x-0.02f, gameObj.transform.position.y, gameObj.transform.position.z);
 		if (gameObj.transform.position.x < -13.7f) {
 			gameObj.transform.position = new Vector3 (13.7f, gameObj.transform.position.y, gameObj.transform.position.z);
@@ -97,27 +94,15 @@ public class Player : MonoBehaviour {
 			gameObj.transform.position = new Vector3 (12.8f, gameObj.transform.position.y, gameObj.transform.position.z);
 		} 
 	}
-	void OnTriggerEnter2D (Collider2D col) {
 
+	void OnTriggerEnter2D (Collider2D col) {
 		if (col.gameObject.tag == "Zombie") {
 			Debug.Log (" Player Collide ");
 			Destroy (col.gameObject);
 			playerHealth--;
-			/*
-			if (playerHealth > 0) {
-				Destroy (col.gameObject);
-				playerHealth--;
-			}
-			*/
 			if (playerHealth >= 0) {
 				lifeArray [playerHealth].gameObject.SetActive (false);
 			}
-
-//			Transform[] c = GetComponentsInChildren<Transform> ();
-//
-//			c[playerHealth-1].
-
-			//life
 		}
 	}
 
