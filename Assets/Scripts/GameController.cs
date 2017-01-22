@@ -7,7 +7,6 @@ public class GameController : MonoBehaviour {
 
 	//GameState
 	public bool continueGame = true;
-	public int playerHealth = 3;
 
 
 	//Game configuration
@@ -39,12 +38,22 @@ public class GameController : MonoBehaviour {
 		//TODO: Check if game should end?
 
 		continueGame = shouldContinueGame ();
+		if (!continueGame) {
+			endGame ();
+		}
 	}
 
 	bool shouldContinueGame () {
 
 		//return (playerHealth > 0) && (playerWidth > goalWidth);
-		return playerHealth > 0;
+		return Player.playerHealth > 0;
+	}
+
+	void endGame () {
+
+		Debug.Log (" End game ");
+
+
 	}
 
 	IEnumerator SpawnZombie() {
@@ -53,7 +62,7 @@ public class GameController : MonoBehaviour {
 		yield return new WaitForSeconds (3.0f); 
 
 		while (continueGame) {
-			Debug.Log ("Spawning Zombie ");
+			//Debug.Log ("Spawning Zombie ");
 			float spawningPointX = transform.position.x;
 	
 			Vector3 spawnPos = new Vector3 (

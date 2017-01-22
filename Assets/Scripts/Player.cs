@@ -7,6 +7,8 @@ public class Player : MonoBehaviour {
 	public Camera cam;
 	public GameObject bullet;
 
+	public static int playerHealth = 3;
+
 	private float maxWidth;
 	Vector3 pos;
 	private Vector3 normalizedDirection;
@@ -29,6 +31,8 @@ public class Player : MonoBehaviour {
 		pos = Input.mousePosition;
 		pos.z = 20;
 
+
+		//Draw life
 	}
 
 	public int getCurrentNumberOfBullets() {
@@ -51,6 +55,16 @@ public class Player : MonoBehaviour {
 		} 
 	}
 
+	void OnTriggerEnter2D (Collider2D col) {
 
+		if (col.gameObject.tag == "Zombie") {
+			Debug.Log (" Player Collide ");
+
+			if (playerHealth > 0) {
+				Destroy (col.gameObject);
+				playerHealth--;
+			}
+		}
+	}
 
 }
