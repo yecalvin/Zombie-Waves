@@ -3,12 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-<<<<<<< HEAD
-  - bullet
-=======
-  - Bullet
->>>>>>> f0a39328aa841e457807bc7a31e1e4936ecdcdc4
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -45,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 1708790695
-    locked: 0
-  - name: Foreground
-    uniqueID: 1324460971
     locked: 0

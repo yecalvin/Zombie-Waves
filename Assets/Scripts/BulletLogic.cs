@@ -7,21 +7,17 @@ public class BulletLogic : MonoBehaviour {
 	public GameObject bullet;
 	public static int currentNumberOfBullets;
 	private int maxBullets = 6;
-<<<<<<< HEAD:Assets/Scripts/BulletLogic.cs
 	public Image aggroBar;
-=======
 
->>>>>>> f0a39328aa841e457807bc7a31e1e4936ecdcdc4:Assets/Scripts/BulletLogic.cs
+
 	// Use this for initialization
 
 	void Start () {
 		currentNumberOfBullets = 0;
-<<<<<<< HEAD:Assets/Scripts/BulletLogic.cs
 		Debug.Log (currentNumberOfBullets);
 		aggroBar.fillAmount = 0;
 		//bullet.gameObject.tag = "bullet";
-=======
->>>>>>> f0a39328aa841e457807bc7a31e1e4936ecdcdc4:Assets/Scripts/BulletLogic.cs
+
 	}
 	
 	// Update is called once per frame
