@@ -48,22 +48,21 @@ public class GameController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//TODO: Check if game should end?
-		continueGame = shouldContinueGame ();
+		continueGame = playerIsAlive ();
 		if (!continueGame) {
 			endGame ();
 		}
 	}
 
-	bool shouldContinueGame () {
+	bool playerIsAlive () {
 		//return (playerHealth > 0) && (playerWidth > goalWidth);
-		return Player.playerHealth > 0 && Player.distance < 10.0f;
+		return Player.playerHealth > 0; //&& Player.distance < 10.0f;
 
 	}
 
 	public void restartGame() {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
 		//Application.LoadLevel(Application.loadedLevel);
-		//startButton.
 		Application.LoadLevel (0); 
 		StartGame();
 	}
