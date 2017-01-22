@@ -37,7 +37,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -189,11 +189,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
   bullet: {fileID: 1937468075819168, guid: bd41bdf5deb934c459ae0d871a868144, type: 2}
+<<<<<<< Updated upstream
+  playerHealth: 0
+=======
   sky: {fileID: 632849877}
   sky2: {fileID: 1039089191}
   ground: {fileID: 1155028437}
   ground2: {fileID: 447211236}
-  playerHealth: 0
+>>>>>>> Stashed changes
   currentNumberOfBullets: 0
 --- !u!212 &267865306
 SpriteRenderer:
@@ -713,7 +716,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 632849877}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7713f4bba6ae848bba3809b5e20c11f2, type: 3}
   m_Name: 
@@ -862,7 +865,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1039089191}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7713f4bba6ae848bba3809b5e20c11f2, type: 3}
   m_Name: 
