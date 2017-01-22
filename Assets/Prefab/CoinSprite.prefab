@@ -68,7 +68,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  bullet: {fileID: 1937468075819168, guid: bd41bdf5deb934c459ae0d871a868144, type: 2}
+  bullet: {fileID: 1249494734121146, guid: bd41bdf5deb934c459ae0d871a868144, type: 2}
+  sky: {fileID: 0}
+  sky2: {fileID: 0}
+  ground: {fileID: 0}
+  ground2: {fileID: 0}
+  life: {fileID: 0}
+  lifeArray: []
   currentNumberOfBullets: 0
 --- !u!212 &212093997452487020
 SpriteRenderer:
