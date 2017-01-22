@@ -12,7 +12,9 @@ public class BulletScript : MonoBehaviour {
 	void Start () {
 		Vector3 mousePos = cam.ScreenToWorldPoint (Input.mousePosition);
 		Vector3 currentPos = transform.position;
-		speed = mousePos-currentPos;
+		speed.x = 3;
+		speed.y = mousePos.y-currentPos.y;
+		speed.z = 5;
 		rb = GetComponent<Rigidbody2D> ();
 		//speed.y = speed.y + 1;
 		rb.velocity = speed;

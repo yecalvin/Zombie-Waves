@@ -36,9 +36,14 @@ public class Zombie : MonoBehaviour {
 
 	void OnCollisionEnter2D(Collision2D coll){
 		Debug.Log ("collision");
+
+		if (coll.gameObject.CompareTag("bullet")) {
+			Debug.Log ("bulletColl");
+		}
 		if (coll.gameObject != null) {
 			Destroy (coll.gameObject);
 			BulletLogic.currentNumberOfBullets--;
+
 			CURRENTHP = CURRENTHP - 50;
 			healthBar.fillAmount = CURRENTHP / (float)STARTINGHP;
 		}
